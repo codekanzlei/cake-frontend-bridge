@@ -58,6 +58,7 @@ class FrontendBridgeComponent extends Component
             'dialogAction' => 'FrontendBridge.dialog_action',
         ],
         'csrfCookieFieldName' => '_csrfToken',
+        'csrfCookieName' => 'csrfToken',
     ];
 
     /**
@@ -159,7 +160,7 @@ class FrontendBridgeComponent extends Component
     }
 
     /**
-     * Should be called explicitely in Controller::beforeRender()
+     * Should be called explicitly in Controller::beforeRender()
      *
      * @param \Cake\Event\Event $event beforeRender event
      * @return void
@@ -195,7 +196,7 @@ class FrontendBridgeComponent extends Component
                 'plugin' => $this->_request->getParam('plugin'),
                 'controller' => Inflector::underscore($this->_controller->getName()),
                 'action' => $this->_request->getParam('action'),
-                'csrf' => $this->_request->getParam($this->getConfig('csrfCookieFieldName'), ''),
+                'csrf' => $this->_request->getCookie($this->getConfig('csrfCookieName'), ''),
                 'csrfCookieFieldName' => $this->getConfig('csrfCookieFieldName'),
             ],
         ];

@@ -7,7 +7,7 @@ use Cake\Controller\Component\RequestHandlerComponent;
 class FrontendBridgeRequestHandlerComponent extends RequestHandlerComponent
 {
     /**
-     * Setter for procted $ext property of the RequestHandlerComponent
+     * Setter for protected $ext property of the RequestHandlerComponent
      *
      * @param string $ext extension
      * @return void
